@@ -6,7 +6,8 @@ import java.util.Properties;
 
 public class TestRailClient {
 
-    private final static String URL = "http://127.0.0.1:3001/";
+    //private final static String URL = "http://127.0.0.1:3001/";
+    private final static String URL = "http://172.22.0.2/";
     private final static String USERNAME = "yuri.kas87@gmail.com";
     private final static String PASSWORD = "qwerty";
     //private final static String APPLICATIONNAME = getProperties("testrail.applicationName");
