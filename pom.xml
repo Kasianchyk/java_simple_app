@@ -7,6 +7,14 @@
     <groupId>org.example.app</groupId>
     <artifactId>java_simple_app</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <aspectj.version>1.8.10</aspectj.version>
+        <junit.jupiter.version>5.0.0-M2</junit.jupiter.version>
+        <junit.platform.version>1.0.0-M2</junit.platform.version>
+    </properties>
 <dependencies>
     <dependency>
         <groupId>org.junit.jupiter</groupId>
@@ -15,15 +23,21 @@
         <scope>test</scope>
     </dependency>
     <dependency>
-        <groupId>com.codepine.api</groupId>
-        <artifactId>testrail-api-java-client</artifactId>
-        <version>2.0.1</version>
+        <groupId>org.junit.platform</groupId>
+        <artifactId>junit-platform-surefire-provider</artifactId>
+        <version>1.3.2</version>
+        <scope>test</scope>
     </dependency>
     <dependency>
         <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-api</artifactId>
+        <artifactId>junit-jupiter-engine</artifactId>
         <version>5.7.1</version>
-        <scope>compile</scope>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.codepine.api</groupId>
+        <artifactId>testrail-api-java-client</artifactId>
+        <version>2.0.1</version>
     </dependency>
 
     <dependency>
@@ -37,6 +51,12 @@
         <artifactId>junit-platform-launcher</artifactId>
         <version>1.7.1</version>
         <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.7.1</version>
+        <scope>compile</scope>
     </dependency>
 
 </dependencies>
@@ -64,6 +84,23 @@
                 <source>8</source>
                 <target>8</target>
             </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.0</version>
+            <configuration>
+                <argLine>
+                    -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                </argLine>
+            </configuration>
+            <dependencies>
+                <dependency>
+                    <groupId>org.aspectj</groupId>
+                    <artifactId>aspectjweaver</artifactId>
+                    <version>${aspectj.version}</version>
+                </dependency>
+            </dependencies>
         </plugin>
 
     </plugins>
