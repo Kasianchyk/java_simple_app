@@ -12,7 +12,8 @@ import org.opentest4j.TestSkippedException;
 
 public class RootExtension implements AfterTestExecutionCallback {
 
-    private String runId = "1";
+    private String runId = System.getProperty("runId");
+    //private String runId = "1";
     private TestRailAPI testRailAPI = new TestRailAPI();
 
     @Override

@@ -10,8 +10,8 @@ import java.util.List;
 
 public class TestRailExecutionCondition implements ExecutionCondition {
 
-    //private String runId = System.getProperty("runId");
-    private String runId = "1";
+    private String runId = System.getProperty("runId");
+    //private String runId = "1";
     private TestRailAPI testRailAPI = new TestRailAPI();
 
     public ConditionEvaluationResult evaluateExecutionCondition(ExtensionContext context) {
