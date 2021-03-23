@@ -7,6 +7,39 @@
     <groupId>org.example.app</groupId>
     <artifactId>java_simple_app</artifactId>
     <version>1.0-SNAPSHOT</version>
+<dependencies>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.7.1</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.codepine.api</groupId>
+        <artifactId>testrail-api-java-client</artifactId>
+        <version>2.0.1</version>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.7.1</version>
+        <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.18</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.platform</groupId>
+        <artifactId>junit-platform-launcher</artifactId>
+        <version>1.7.1</version>
+        <scope>test</scope>
+    </dependency>
+
+</dependencies>
 <build>
     <plugins>
         <plugin>
@@ -24,6 +57,15 @@
                 <mainClass>org.example.app.HelloWorld</mainClass>
             </configuration>
         </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>8</source>
+                <target>8</target>
+            </configuration>
+        </plugin>
+
     </plugins>
 </build>
 
