@@ -25,7 +25,7 @@ public class MainTest {
     @Test
     @DisplayName("Test case 2")
     public void secondTest(){
-        Assertions.assertEquals(1, 0);
+        Assertions.assertEquals(1, 0, "Message in case of assertion error");
     }
 
     @TestRail
